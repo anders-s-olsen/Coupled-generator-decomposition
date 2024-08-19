@@ -8,7 +8,7 @@ This repository contains the implementation of the Coupled Generator Decompositi
 
 ## Introduction
 
-Say you have a data matrix $\mathbf{X}_s$ of size $(N_s\times P)$, where $s$ indicates the index for, e.g., a subject, clinical group, or data modality. In our paper, $N_{\texrm{EEG}}=70$ and $N_{\textrm{MEG}}=102$ are the number of sensors for each neuroimaging modality and $P=180$ is the number of time-points in a face perception experiment. Say, next, that you wish to conduct some form of matrix decomposition to identify sources and source mixing matrices --- using, e.g., princpal/independent component analysis or archetypal analysis. In our paper, Naturally, one would concatenate data matrices such that $N=\sum_s N_s$, however, this approach would lead to a source mixing matrix
+Say you have a data matrix $\mathbf{X}_s$ of size $(N_s\times P)$, where $s$ indicates the index for, e.g., a subject, clinical group, or data modality. In our paper, $N_{\textrm{EEG}}=70$ and $N_{\textrm{MEG}}=102$ are the number of sensors for each neuroimaging modality and $P=180$ is the number of time-points in a face perception experiment. Say, next, that you wish to conduct some form of matrix decomposition to identify sources and source mixing matrices --- using, e.g., princpal/independent component analysis or archetypal analysis. In our paper, Naturally, one would concatenate data matrices such that $N=\sum_s N_s$, however, this approach would lead to a source mixing matrix
 
 
 ## Introduction
