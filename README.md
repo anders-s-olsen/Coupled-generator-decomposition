@@ -26,6 +26,7 @@ The input data `X` may either be a torch tensor of size (*,N,P), where * may be 
 - Example 1: A time-locked EEG experiment is repeated across $S$ subjects using the same number of EEG sensors $N$ and time points $P$: `X` is a torch.tensor(), and `X.shape = (S,N,P)`.
 - Example 2: A time-locked simultaneous multimodal EEG and MEG experiment is repeated across $S$ subjects, but the number of EEG and MEG sensors is different: `X={'EEG':EEGdata,'MEG':MEGdata}` is a dictionary of torch tensors, where, e.g., `EEGdata.shape = (S,N_EEG,P)`. There are no restrictions on the naming or number of dictionary elements.
 
+In summary, these are the inputs:
 - **Required inputs:**
     - `num_comp`: the number of components to learn
     - `X`: a torch tensor or dictionary of torch tensors.
