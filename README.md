@@ -74,7 +74,7 @@ test_loss = model.eval_model(Xtrain=X_train,Xtest=X_test,G_idx=G_idx)
 - **Affiliation:** DTU Compute
 - **Year:** 2023-2024
 - **Toolbox introduced:** February 2024
-- **Latest toolbox update:** August 2024 (readability and usability)
+- **Toolbox updates:** March 2024 (AA bug fix), August 2024 (readability and usability)
 
 ## Distribution of S matrix over subjects referred to in paper (EEG left, MEG right)
 <div style="display: flex;">
