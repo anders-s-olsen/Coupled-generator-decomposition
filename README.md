@@ -8,7 +8,15 @@ This repository contains the implementation of the Coupled Generator Decompositi
 
 ## Introduction
 
-The main Python class `CGD.py` implements the Coupled Generator Decomposition model for a variable number of input data dimensions. The input data `X` should always be a dictionary of torch tensors. If you have data of varying dimensions, such as EEG/MEG or two clinical groups of differing number of subjects, then the data for these should be in each their tensor, and the tensors should be input as a dictionary, e.g., `X = {'EEG':EEGdata,'MEG':MEGdata}`.
+Say you have a data matrix `X` of size `(n\times p)`
+
+
+## Introduction
+
+The main Python class `CGD.py` implements the Coupled Generator Decomposition model for a variable number of input data dimensions. 
+
+
+The input data `X` should be a *dictionary of torch tensors*. In the case of a group model, `X` is allowed to be a torch tensor. If you have data of varying dimensions, such as EEG/MEG or two clinical groups of differing number of subjects, then the data for these should be in each their tensor, and the tensors should be input as a dictionary, e.g., `X = {'EEG':EEGdata,'MEG':MEGdata}`.
 
 ### Requirements
 - PyTorch
@@ -17,7 +25,7 @@ The main Python class `CGD.py` implements the Coupled Generator Decomposition mo
 
 - **Required inputs:**
     - `num_comp`: the number of components to learn
-    - `X`: a dictionary of torch tensors, each element of size (*,N,P), where * may be any number of extra dimensions.
+    - `X`: a dictionary of torch tensors, each element of size (*,N,P), where * may be any number of extra dimensions (e.g., subjects, clinical groups, modalities provided).
 - **Optional inputs:**
     - `model`: the model to use. Options are 'SPCA', 'AA', 'DAA'. Default is 'SPCA'.
     - `Xtilde`: a dictionary of torch tensors. If not specified, `Xtilde` is assumed to be equal to `X`.
