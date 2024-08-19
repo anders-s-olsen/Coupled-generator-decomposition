@@ -46,10 +46,25 @@ In summary, these are the inputs:
 
 ### Example use
 ```
+from CGD import CGD, CGD_trainer
 
-blobla
-ladsf
+# specify data and hyperparameters
+X_train = {'EEG':EEGdata, 'MEG':MEGdata}    ## EEGdata and MEGdata are torch tensors
+X_test = {'EEG':EEGdata_test, 'MEG':MEGdata_test}
+lambda_1 = 1e-2 #l1-regularization
+lambda_2 = 1e-1 #l2-regularization
+G_idx = times>=0 # times is a torch tensor indicating timing of samples relative to stimulus
+K = 5 #number of components
+lr = 0.1 #learning rate
 
+# initialize model and run parameter estimation
+model = CGD.TMMSAA(X=X_train,num_comp=K,model='SPCA',lambda1=lambda1,lambda2=lambda2,G_idx=G_idx)
+optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+loss,_ = CGD_trainer.Optimizationloop(model=model,optimizer=optimizer)
+
+# retrieve estimated parameters and evaluate loss on a test set
+G,S,_,_ = model.get_model_params()
+test_loss = model.eval_model(Xtrain=X_train,Xtest=X_test,G_idx=G_idx)
 ```
 
 
