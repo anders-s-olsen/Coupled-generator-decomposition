@@ -44,12 +44,22 @@ In summary, these are the inputs:
 - **AA**: Archetypal Analysis, in which the model optimizes a shared generator matrix G `(P,K)` and a mixing matrix S `(*,K,P)`. Both G and S are assumed non-negative and sum-to-one constraints enforced through the softmax function. 
 - **DAA**: Directional Archetypal Analysis, which works similarly to AA except the data are assumed to be on a sign-invariant hypersphere.
 
+### Example use
+```
+
+blobla
+ladsf
+
+```
+
+
 ## Author
 
 - **Anders S Olsen**
 - **Affiliation:** DTU Compute
 - **Year:** 2023-2024
-- **Latest toolbox update:** August 2024
+- **Toolbox introduced:** February 2024
+- **Latest toolbox update:** August 2024 (readability and usability)
 
 ## Distribution of S matrix over subjects referred to in paper (EEG left, MEG right)
 <div style="display: flex;">
