@@ -45,6 +45,8 @@ In summary, these are the inputs:
 - **DAA**: Directional Archetypal Analysis, which works similarly to AA except the data are assumed to be on a sign-invariant hypersphere.
 
 ### Example use
+In a terminal: Change directory to the directory with the CGD folder (optionally create a new virtual/conda environment) and run `pip install .` to install CGD as a loadable python package.
+
 ```
 from CGD import CGD, CGD_trainer
 
