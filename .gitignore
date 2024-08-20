@@ -10,3 +10,4 @@ figure_scripts/figures_tmp/
 **/__pycache__/
 SPCA_best_params.tex
 times.csv
+experiments/*unused.py
