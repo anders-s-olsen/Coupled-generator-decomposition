@@ -1,5 +1,4 @@
 import torch
-from time import time
 torch.set_default_dtype(torch.double)
 
 
@@ -43,7 +42,6 @@ class CGD(torch.nn.Module):
     def __init__(self, num_comp, X, Xtilde=None, model="SPCA", G_idx=None, lambda1=None, lambda2=None, init=None):
         super().__init__()
         print("Initializing model: " + model)
-        t1 = time()
 
         self.model = model
 
@@ -106,9 +104,6 @@ class CGD(torch.nn.Module):
             else:
                 self.Bp = torch.nn.Parameter(init["Bp"].clone())
                 self.Bn = torch.nn.Parameter(init["Bn"].clone())
-        
-        t2 = time()
-        print("Model initialized in " + str(t2 - t1) + " seconds")
 
     def forwardDAA(self, X, Xtilde, G_soft, S_soft):
         # loss function for directional archetypal analysis
