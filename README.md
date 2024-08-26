@@ -33,7 +33,7 @@ In summary, these are the inputs:
 - **Optional inputs:**
     - `model`: the model to use. Options are 'SPCA', 'AA', 'DAA'. Default is 'SPCA'.
     - `Xtilde`: a torch tensor or dictionary of torch tensors to construct sources from, e.g., only the post-stimulus part of a time-locked experiment. If not specified, `Xtilde` is assumed to be equal to `X`.
-    - `G_idx`: a boolean tensor of size `(P,)` indicating indices of a subset of `X` to construct sources from (defaults to all).
+    - `G_idx`: alternatively to providing `Xtilde`, a boolean tensor `G_idx` of size `(P,)` may indicate indices of a subset of `X` to construct sources from (defaults to all).
     - `lambda1`: the L1 regularization parameter for SPCA.
     - `lambda2`: the L2 regularization parameter for SPCA.
     - `init`: a dictionary of torch tensors, specifying the initial values for G (and S, if model=='AA').
@@ -44,8 +44,12 @@ In summary, these are the inputs:
 - **AA**: Archetypal Analysis, in which the model optimizes a shared generator matrix G `(P,K)` and a mixing matrix S `(*,K,P)`. Both G and S are assumed non-negative and sum-to-one constraints enforced through the softmax function. 
 - **DAA**: Directional Archetypal Analysis, which works similarly to AA except the data are assumed to be on a sign-invariant hypersphere.
 
+### Training
+
+The class is accompanied by a trainer. The trainer outputs the loss curve and the lowest loss obtained. Following training, estimated model parameters may be extracted using `G,S,Bp,Bn = model.get_params()`. `Bp` and `Bn` are constrained non-zero variables such that `G=Bp-Bn`. 
+
 ### Example use
-In a terminal: Change directory to the directory with the CGD folder (optionally create a new virtual/conda environment) and run `pip install .` to install CGD as a loadable python package.
+In a terminal: Change directory to the directory with the CGD folder (optionally create a new virtual/conda environment with Python, PyTorch, tqdm, and numpy) and run `pip install .` to install CGD as a loadable python package.
 
 ```
 from CGD import CGD, CGD_trainer
