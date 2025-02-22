@@ -64,7 +64,7 @@ K = 5 #number of components
 lr = 0.1 #learning rate
 
 # initialize model and run parameter estimation
-model = CGD.TMMSAA(X=X_train,num_comp=K,model='SPCA',lambda1=lambda1,lambda2=lambda2,G_idx=G_idx)
+model = CGD.CGD(X=X_train,num_comp=K,model='SPCA',lambda1=lambda1,lambda2=lambda2,G_idx=G_idx)
 optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 loss,_ = CGD_trainer.Optimizationloop(model=model,optimizer=optimizer)
 
