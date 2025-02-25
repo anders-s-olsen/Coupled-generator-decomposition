@@ -84,6 +84,6 @@ test_loss = model.eval_model(Xtrain=X_train,Xtest=X_test,G_idx=G_idx)
 
 ## Distribution of S matrix over subjects referred to in paper (EEG left, MEG right)
 <div style="display: flex;">
-    <img src="figures/S_subEEG.png" alt="EEG" style="width: 45%;">
-    <img src="figures/S_subMEG.png" alt="MEG" style="width: 45%;">
+    <img src="paper/figures/S_subEEG.png" alt="EEG" style="width: 45%;">
+    <img src="paper/figures/S_subMEG.png" alt="MEG" style="width: 45%;">
 </div>
